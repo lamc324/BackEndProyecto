@@ -16,9 +16,9 @@ import una.cr.design.model.Paciente;
  * @author John
  */
 public class ConsultorioDAO {
+
     private final Session session = HibernateUtil.getSessionFactory().openSession();
 
-    
     public Consultorio findById(int id) {
         Consultorio consultorio = null;
         org.hibernate.Query query = session.createQuery("from Consultorio where id_consultorio = :id_consultorio ");
@@ -30,7 +30,7 @@ public class ConsultorioDAO {
 
         return consultorio;
     }
-    
+
     public Consultorio saveConsultorio(Consultorio consultorio) {
         session.beginTransaction();
         session.save(consultorio);
@@ -38,7 +38,7 @@ public class ConsultorioDAO {
 
         return consultorio;
     }
-    
+
     public List<Consultorio> findAll() {
         List<Consultorio> consultorioList = new ArrayList<>();
 

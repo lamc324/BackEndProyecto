@@ -8,9 +8,8 @@ import una.cr.design.model.Consultorio;
  *
  * @author John
  */
-
-
 public class ConsultorioService {
+
     private ConsultorioDAO consultorioDAO;
 
     /**
@@ -22,15 +21,15 @@ public class ConsultorioService {
     public ConsultorioService(ConsultorioDAO consultorioDao) {
         this.consultorioDAO = consultorioDao;
     }
-    
-    public Consultorio findById(int id){
+
+    public Consultorio findById(int id) {
         return consultorioDAO.findById(id);
     }
 
     public Consultorio saveConsultorio(Consultorio consultorio) {
         return consultorioDAO.saveConsultorio(consultorio);
     }
-    
+
     public List<Consultorio> findAll() {
         return consultorioDAO.findAll();
     }
