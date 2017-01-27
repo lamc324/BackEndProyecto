@@ -20,7 +20,6 @@ import javax.ws.rs.core.UriInfo;
 import una.cr.design.dao.ConsultorioDAO;
 import una.cr.design.model.Consultorio;
 import una.cr.design.service.ConsultorioService;
-import una.cr.design.service.PacientesService;
 
 /**
  *
@@ -49,7 +48,7 @@ public class ConsultorioWebService {
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Consultorio> getAllPacientes() {
+    public List<Consultorio> getAllConsultorios() {
         List<Consultorio> consultorioList = null;
         consultorioDAO = new ConsultorioDAO();
         consultorioService = new ConsultorioService(consultorioDAO);
@@ -68,7 +67,7 @@ public class ConsultorioWebService {
     @GET
     @Path("/{id_consultorio}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Consultorio getPacientes(@PathParam("id_consultorio") int id) {
+    public Consultorio getConsultorio(@PathParam("id_consultorio") int id) {
         Consultorio consultorio = null;
         consultorioDAO = new ConsultorioDAO();
         consultorioService = new ConsultorioService(consultorioDAO);
@@ -81,14 +80,14 @@ public class ConsultorioWebService {
     /**
      * Create a new Student
      *
-     * @param paciente
+     * @param consultorio
      * @return student
      */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Consultorio createStudent(Consultorio consultorio) {
+    public Consultorio createConsultorio(Consultorio consultorio) {
 
         consultorioDAO = new ConsultorioDAO();
         consultorioService = new ConsultorioService(consultorioDAO);
@@ -106,7 +105,7 @@ public class ConsultorioWebService {
      */
     @DELETE
     @Path("/{id_consultorio}")
-    public boolean deletePaciente(@PathParam("id_consultorio") int id) {
+    public boolean deleteConsultorio(@PathParam("id_consultorio") int id) {
         boolean result;
         consultorioDAO = new ConsultorioDAO();
         consultorioService = new ConsultorioService(consultorioDAO);
@@ -119,7 +118,7 @@ public class ConsultorioWebService {
     /**
      * Update a Student
      *
-     * @param paciente
+     * @param consultorio
      * @return student
      */
     @PUT

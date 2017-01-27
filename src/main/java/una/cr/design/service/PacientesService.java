@@ -62,11 +62,11 @@ public class PacientesService {
         return pacienteDAO.updatePaciente(paciente);
     }
 
-    public PacienteDAO getStudentDAO() {
+    public PacienteDAO getPacienteDAO() {
         return pacienteDAO;
     }
 
-    public void setStudentDAO(PacienteDAO pacienteDAO) {
+    public void setPacienteDAO(PacienteDAO pacienteDAO) {
         this.pacienteDAO = pacienteDAO;
     }
     

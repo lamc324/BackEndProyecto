@@ -19,7 +19,8 @@
  */
 package una.cr.design.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,23 +36,23 @@ import javax.persistence.UniqueConstraint;
 @Entity
 @Table(name = "consultorio", catalog = "proyecto", uniqueConstraints = {
     @UniqueConstraint(columnNames = "id_consultorio")})
-public class Consultorio {
+public class Consultorio implements Serializable {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Column(name = "id_consultorio", unique = true, nullable = false)
     private int idConsultorio;
-    
+
     @Column(name = "nombre", unique = false, nullable = false)
     private String nombre;
-    
+
     @Column(name = "dias", unique = false, nullable = false)
-    private String diasConsulta;
-    
+    private String dias;
+
     @Column(name = "horario", unique = false, nullable = false)
-    private String horarioAtencion;
-    
-    @Column(name = "telefono", unique = false, nullable = false)
+    private String horario;
+
+    @Column(name = "telefono", unique = false, nullable = true)
     private String telefono;
 
     /**
@@ -60,92 +61,18 @@ public class Consultorio {
     public Consultorio() {
     }
 
-
-
-    /**
-     * Constructor con parametros
-     *
-     * @param nombre
-     * @param diasConsulta
-     * @param horarioAtencion
-     * @param telefono
-     */
-    public Consultorio(int idConsultorio, String nombre, String diasConsulta, String horarioAtencion, String telefono) {
+    public Consultorio(int idConsultorio, String nombre, String dias, String horario, String telefono) {
         this.idConsultorio = idConsultorio;
         this.nombre = nombre;
-        this.diasConsulta = diasConsulta;
-        this.horarioAtencion = horarioAtencion;
-        this.telefono = telefono;
-    }
-    
-        public Consultorio( String nombre, String diasConsulta, String horarioAtencion, String telefono) {
-        this.nombre = nombre;
-        this.diasConsulta = diasConsulta;
-        this.horarioAtencion = horarioAtencion;
+        this.dias = dias;
+        this.horario = horario;
         this.telefono = telefono;
     }
 
-    /**
-     *
-     * @return nombre
-     */
-    public String getNombre() {
-        return nombre;
-    }
-
-    /**
-     *
-     * @param nombre
-     */
-    public void setNombre(String nombre) {
+    public Consultorio(String nombre, String dias, String horario, String telefono) {
         this.nombre = nombre;
-    }
-
-    /**
-     *
-     * @return diaConsulta
-     */
-    public String getDiasConsulta() {
-        return diasConsulta;
-    }
-
-    /**
-     *
-     * @param diasConsulta
-     */
-    public void setDiasConsulta(String diasConsulta) {
-        this.diasConsulta = diasConsulta;
-    }
-
-    /**
-     *
-     * @return horarioAtencion
-     */
-    public String getHorarioAtencion() {
-        return horarioAtencion;
-    }
-
-    /**
-     *
-     * @param horarioAtencion
-     */
-    public void setHorarioAtencion(String horarioAtencion) {
-        this.horarioAtencion = horarioAtencion;
-    }
-
-    /**
-     *
-     * @return telefono
-     */
-    public String getTelefono() {
-        return telefono;
-    }
-
-    /**
-     *
-     * @param telefono
-     */
-    public void setTelefono(String telefono) {
+        this.dias = dias;
+        this.horario = horario;
         this.telefono = telefono;
     }
 
@@ -153,21 +80,89 @@ public class Consultorio {
         return idConsultorio;
     }
 
-    
     public void setIdConsultorio(int idConsultorio) {
         this.idConsultorio = idConsultorio;
     }
 
-    @Override
-    public String toString() {
-        return "Consultorio{" + "idConsultorio=" + idConsultorio + ", nombre=" + nombre + ", diasConsulta=" + diasConsulta + ", horarioAtencion=" + horarioAtencion + ", telefono=" + telefono + '}';
+    public String getNombre() {
+        return nombre;
     }
 
-    /**
-     *
-     * @return
-     */
-    
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDias() {
+        return dias;
+    }
+
+    public void setDias(String dias) {
+        this.dias = dias;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
     
 
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + this.idConsultorio;
+        hash = 97 * hash + Objects.hashCode(this.nombre);
+        hash = 97 * hash + Objects.hashCode(this.dias);
+        hash = 97 * hash + Objects.hashCode(this.horario);
+        hash = 97 * hash + Objects.hashCode(this.telefono);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Consultorio other = (Consultorio) obj;
+        if (this.idConsultorio != other.idConsultorio) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.dias, other.dias)) {
+            return false;
+        }
+        if (!Objects.equals(this.horario, other.horario)) {
+            return false;
+        }
+        if (!Objects.equals(this.telefono, other.telefono)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Consultorio{" + "idConsultorio=" + idConsultorio + ", nombre=" + nombre + ", dias=" + dias + ", horario=" + horario + ", telefono=" + telefono + '}';
+    }
+
+    
 }

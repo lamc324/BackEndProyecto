@@ -42,11 +42,11 @@ public class ConsultorioService {
         return consultorioDAO.updateConsultorio(consultorio);
     }
 
-    public ConsultorioDAO getStudentDAO() {
+    public ConsultorioDAO getConsultorioDAO() {
         return consultorioDAO;
     }
 
-    public void setStudentDAO(ConsultorioDAO pacienteDAO) {
+    public void setConsultorioDAO(ConsultorioDAO pacienteDAO) {
         this.consultorioDAO = pacienteDAO;
     }
 }

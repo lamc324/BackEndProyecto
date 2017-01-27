@@ -81,7 +81,7 @@ public class PacientesWebservice {
     @GET
     @Path("/{id_paciente}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Paciente getPacientes(@PathParam("id_paciente") int id) {
+    public Paciente getPaciente(@PathParam("id_paciente") int id) {
         Paciente paciente = null;
         pacienteDAO = new PacienteDAO();
         pacienteService = new PacientesService(pacienteDAO);
@@ -101,7 +101,7 @@ public class PacientesWebservice {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Paciente createStudent(Paciente paciente) {
+    public Paciente createPaciente(Paciente paciente) {
 
         pacienteDAO = new PacienteDAO();
         pacienteService = new PacientesService(pacienteDAO);

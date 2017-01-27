@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Session;
 import una.cr.design.model.Consultorio;
-import una.cr.design.model.Paciente;
 
 /**
  *
@@ -42,7 +41,7 @@ public class ConsultorioDAO {
     public List<Consultorio> findAll() {
         List<Consultorio> consultorioList = new ArrayList<>();
 
-        consultorioList = session.createCriteria(Paciente.class).list();
+        consultorioList = session.createCriteria(Consultorio.class).list();
 
         return consultorioList;
     }
