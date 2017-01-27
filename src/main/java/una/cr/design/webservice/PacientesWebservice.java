@@ -37,7 +37,7 @@ import una.cr.design.service.PacientesService;
 /**
  * REST Web Service
  *
- * @author mguzmana
+ * @author john
  */
 @Path("pacientes")
 public class PacientesWebservice {
