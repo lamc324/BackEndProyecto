@@ -79,9 +79,9 @@ public class PacientesWebservice {
      * @return Student
      */
     @GET
-    @Path("/{id}")
+    @Path("/{id_paciente}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Paciente getPacientes(@PathParam("id") int id) {
+    public Paciente getPacientes(@PathParam("id_paciente") int id) {
         Paciente paciente = null;
         pacienteDAO = new PacienteDAO();
         pacienteService = new PacientesService(pacienteDAO);
@@ -118,8 +118,8 @@ public class PacientesWebservice {
      * @return student
      */
     @DELETE
-    @Path("/{id}")
-    public boolean deletePaciente(@PathParam("id") int id) {
+    @Path("/{id_paciente}")
+    public boolean deletePaciente(@PathParam("id_paciente") int id) {
         boolean result;
         pacienteDAO = new PacienteDAO();
         pacienteService = new PacientesService(pacienteDAO);

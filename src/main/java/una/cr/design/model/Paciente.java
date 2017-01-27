@@ -20,6 +20,7 @@
 package una.cr.design.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -99,20 +100,12 @@ public class Paciente implements Serializable {
         this.observaciones = observaciones;
     }
 
-    /**
-     *
-     * @return id
-     */
-    public int getId() {
+    public int getIdPaciente() {
         return idPaciente;
     }
 
-    /**
-     *
-     * @param id
-     */
-    public void setId(int id) {
-        this.idPaciente = id;
+    public void setIdPaciente(int idPaciente) {
+        this.idPaciente = idPaciente;
     }
 
     /**
@@ -211,14 +204,6 @@ public class Paciente implements Serializable {
         this.observaciones = observaciones;
     }
 
-    public int getIdPaciente() {
-        return idPaciente;
-    }
-
-    public void setIdPaciente(int idPaciente) {
-        this.idPaciente = idPaciente;
-    }
-
     /**
      * Retorna solo un elemento del array de enfermedades
      *
@@ -235,6 +220,54 @@ public class Paciente implements Serializable {
      *
      * @return toString
      */
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + this.idPaciente;
+        hash = 89 * hash + Objects.hashCode(this.nombre);
+        hash = 89 * hash + Objects.hashCode(this.telefono);
+        hash = 89 * hash + Objects.hashCode(this.direccion);
+        hash = 89 * hash + Objects.hashCode(this.fechaNacimiento);
+        hash = 89 * hash + Objects.hashCode(this.enfermedades);
+        hash = 89 * hash + Objects.hashCode(this.observaciones);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Paciente other = (Paciente) obj;
+        if (this.idPaciente != other.idPaciente) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.telefono, other.telefono)) {
+            return false;
+        }
+        if (!Objects.equals(this.direccion, other.direccion)) {
+            return false;
+        }
+        if (!Objects.equals(this.fechaNacimiento, other.fechaNacimiento)) {
+            return false;
+        }
+        if (!Objects.equals(this.enfermedades, other.enfermedades)) {
+            return false;
+        }
+        if (!Objects.equals(this.observaciones, other.observaciones)) {
+            return false;
+        }
+        return true;
+    }
     @Override
     public String toString() {
         return "Paciente{" + "idPaciente=" + idPaciente + ", nombre=" + nombre + ", telefono=" + telefono + ", direccion=" + direccion + ", fechaNacimiento=" + fechaNacimiento + ", enfermedades=" + enfermedades + ", observaciones=" + observaciones + '}';

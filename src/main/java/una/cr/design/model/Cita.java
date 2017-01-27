@@ -84,66 +84,42 @@ public class Cita {
         this.confirmar = confirmar;
     }
 
-    /**
-     *
-     * @return id
-     */
-    public int getId() {
+    public int getIdCita() {
         return idCita;
     }
 
-    /**
-     *
-     * @param paciente
-     */
-    public void setPaciente(int paciente) {
-        this.idCita = paciente;
+    public void setIdCita(int idCita) {
+        this.idCita = idCita;
     }
 
-    /**
-     *
-     * @return consultorio
-     */
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
+
     public Consultorio getConsultorio() {
         return consultorio;
     }
 
-    /**
-     *
-     * @param consultorio
-     */
     public void setConsultorio(Consultorio consultorio) {
         this.consultorio = consultorio;
     }
 
-    /**
-     *
-     * @return fecha
-     */
     public String getFecha() {
         return fecha;
     }
 
-    /**
-     *
-     * @param fecha
-     */
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    /**
-     *
-     * @return confirmar
-     */
     public boolean isConfirmar() {
         return confirmar;
     }
 
-    /**
-     *
-     * @param confirmar
-     */
     public void setConfirmar(boolean confirmar) {
         this.confirmar = confirmar;
     }

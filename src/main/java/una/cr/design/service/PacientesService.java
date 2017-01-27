@@ -46,8 +46,8 @@ public class PacientesService {
         return pacienteDAO.findById(id);
     }
 
-    public Paciente savePaciente(Paciente Paciente) {
-        return pacienteDAO.savePaciente(Paciente);
+    public Paciente savePaciente(Paciente paciente) {
+        return pacienteDAO.savePaciente(paciente);
     }
     
     public List<Paciente> findAll() {
