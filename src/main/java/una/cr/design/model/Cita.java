@@ -20,6 +20,7 @@
 package una.cr.design.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -144,6 +145,49 @@ public class Cita {
      *
      * @return toString
      */
+    
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 97 * hash + this.idCita;
+        hash = 97 * hash + Objects.hashCode(this.paciente);
+        hash = 97 * hash + Objects.hashCode(this.consultorio);
+        hash = 97 * hash + Objects.hashCode(this.fecha);
+        hash = 97 * hash + Objects.hashCode(this.confirmar);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cita other = (Cita) obj;
+        if (this.idCita != other.idCita) {
+            return false;
+        }
+        if (!Objects.equals(this.paciente, other.paciente)) {
+            return false;
+        }
+        if (!Objects.equals(this.consultorio, other.consultorio)) {
+            return false;
+        }
+        if (!Objects.equals(this.fecha, other.fecha)) {
+            return false;
+        }
+        if (!Objects.equals(this.confirmar, other.confirmar)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
     @Override
     public String toString() {
         return "Cita{" + "id=" + idCita + ", consultorio=" + consultorio + ", fecha=" + fecha + ", confirmar=" + confirmar + '}';
