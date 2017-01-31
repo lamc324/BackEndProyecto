@@ -1,7 +1,21 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright (C) 2016 Grupo Tango
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Universidad Nacional de Costa Rica, Estudiantes: Luis Alonso Morgan Campos,
+ * John Herrera Jimenez, Kevin Venegas Loria, Caleb Villalta Quesada, Josue David Matamorros.
  */
 package una.cr.design.webservice;
 
@@ -23,7 +37,7 @@ import una.cr.design.service.ConsultorioService;
 
 /**
  *
- * @author John
+ * @author Grupo Tango
  */
 @Path("consultorios")
 public class ConsultorioWebService {
@@ -35,15 +49,15 @@ public class ConsultorioWebService {
     private UriInfo context;
 
     /**
-     * Creates a new instance of StudentResource
+     * 
      */
     public ConsultorioWebService() {
     }
 
     /**
-     * Retrieves All the Students
+     * Obtiene todos los consultorios
      *
-     * @return Student
+     * @return Consultorio
      */
     @GET
     @Path("/")
@@ -59,10 +73,10 @@ public class ConsultorioWebService {
     }
 
     /**
-     * Retrieves only one student
+     * Obtiene solo un consultorio
      *
      * @param id
-     * @return Student
+     * @return Consultorio
      */
     @GET
     @Path("/{id_consultorio}")
@@ -78,10 +92,10 @@ public class ConsultorioWebService {
     }
 
     /**
-     * Create a new Student
+     * Crea un consultorio
      *
      * @param consultorio
-     * @return student
+     * @return Consultorio
      */
     @POST
     @Path("/")
@@ -98,10 +112,10 @@ public class ConsultorioWebService {
     }
 
     /**
-     * Delete a new Student
+     * Borra un consultorio
      *
      * @param id
-     * @return student
+     * @return Consultorio
      */
     @DELETE
     @Path("/{id_consultorio}")
@@ -116,10 +130,10 @@ public class ConsultorioWebService {
     }
 
     /**
-     * Update a Student
+     * Actualiza un consultorio
      *
      * @param consultorio
-     * @return student
+     * @return Consultorio
      */
     @PUT
     @Path("/")

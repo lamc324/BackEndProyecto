@@ -75,7 +75,8 @@ public class Cita {
     /**
      * Constructor con parametro
      *
-     * @param id
+     * @param idCita
+     * @param paciente
      * @param consultorio
      * @param fecha
      * @param confirmar

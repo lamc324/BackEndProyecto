@@ -1,7 +1,21 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright (C) 2016 Grupo Tango
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Universidad Nacional de Costa Rica, Estudiantes: Luis Alonso Morgan Campos,
+ * John Herrera Jimenez, Kevin Venegas Loria, Caleb Villalta Quesada, Josue David Matamorros.
  */
 package una.cr.design.webservice;
 
@@ -23,7 +37,7 @@ import una.cr.design.service.CitaService;
 
 /**
  *
- * @author John
+ * @author Grupo Tango
  */
 @Path("citas")
 public class CitaWebService {
@@ -34,13 +48,13 @@ public class CitaWebService {
     private UriInfo context;
 
     /**
-     * Creates a new instance of StudentResource
+     * 
      */
     public CitaWebService() {
     }
 
     /**
-     * Retrieves All the Students
+     * Obtiene todas las citas
      *
      * @return Student
      */
@@ -58,7 +72,7 @@ public class CitaWebService {
     }
 
     /**
-     * Retrieves only one student
+     * Obtiene una sola cita
      *
      * @param id
      * @return Student
@@ -77,9 +91,9 @@ public class CitaWebService {
     }
 
     /**
-     * Create a new Student
+     * Crea una cita
      *
-     * @param consultorio
+     * @param cita
      * @return student
      */
     @POST
@@ -97,7 +111,7 @@ public class CitaWebService {
     }
 
     /**
-     * Delete a new Student
+     * Borra una cita
      *
      * @param id
      * @return student
@@ -115,9 +129,9 @@ public class CitaWebService {
     }
 
     /**
-     * Update a Student
+     * Actualiza una cita
      *
-     * @param consultorio
+     * @param cita
      * @return student
      */
     @PUT

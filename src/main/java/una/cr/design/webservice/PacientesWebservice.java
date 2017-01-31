@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 mguzmana
+ * Copyright (C) 2016 Grupo Tango
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -14,7 +14,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 
- * Universidad Nacional de Costa Rica, Prof: Maikol Guzman Alan.
+ * Universidad Nacional de Costa Rica, Estudiantes: Luis Alonso Morgan Campos,
+ * John Herrera Jimenez, Kevin Venegas Loria, Caleb Villalta Quesada, Josue David Matamorros.
  */
 package una.cr.design.webservice;
 
@@ -37,7 +38,7 @@ import una.cr.design.service.PacientesService;
 /**
  * REST Web Service
  *
- * @author john
+ * @author Grupo Tango
  */
 @Path("pacientes")
 public class PacientesWebservice {
@@ -49,15 +50,15 @@ public class PacientesWebservice {
     private UriInfo context;
 
     /**
-     * Creates a new instance of StudentResource
+     * 
      */
     public PacientesWebservice() {
     }
 
     /**
-     * Retrieves All the Students
+     * Obtiene todos los pacientes
      *
-     * @return Student
+     * @return Paciente
      */
     @GET
     @Path("/")
@@ -73,10 +74,10 @@ public class PacientesWebservice {
     }
 
     /**
-     * Retrieves only one student
+     * Obtiene solo un paciente
      *
      * @param id
-     * @return Student
+     * @return paciente
      */
     @GET
     @Path("/{id_paciente}")
@@ -92,10 +93,10 @@ public class PacientesWebservice {
     }
 
     /**
-     * Create a new Student
+     * Crea un paciente
      *
      * @param paciente
-     * @return student
+     * @return paciente
      */
     @POST
     @Path("/")
@@ -112,10 +113,10 @@ public class PacientesWebservice {
     }
 
     /**
-     * Delete a new Student
+     * Borra un paciente
      *
      * @param id
-     * @return student
+     * @return paciente
      */
     @DELETE
     @Path("/{id_paciente}")
@@ -130,10 +131,10 @@ public class PacientesWebservice {
     }
 
     /**
-     * Update a Student
+     * Actualiza un paciente
      *
      * @param paciente
-     * @return student
+     * @return paciente
      */
     @PUT
     @Path("/")

@@ -25,7 +25,7 @@ import una.cr.design.model.Paciente;
 
 /**
  *
- * @author venegas97k
+ * @author Grupo Tango
  */
 public class PacientesService {
 
@@ -38,34 +38,70 @@ public class PacientesService {
     public PacientesService() {
     }
 
+    /**
+     *
+     * @param pacienteDao
+     */
     public PacientesService(PacienteDAO pacienteDao) {
         this.pacienteDAO = pacienteDao;
     }
     
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Paciente findById(int id){
         return pacienteDAO.findById(id);
     }
 
+    /**
+     *
+     * @param paciente
+     * @return
+     */
     public Paciente savePaciente(Paciente paciente) {
         return pacienteDAO.savePaciente(paciente);
     }
     
+    /**
+     *
+     * @return
+     */
     public List<Paciente> findAll() {
         return pacienteDAO.findAll();
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public boolean deletePaciente(int id) {
         return pacienteDAO.deletePaciente(id);
     }
 
+    /**
+     *
+     * @param paciente
+     * @return
+     */
     public Paciente updatePaciente(Paciente paciente) {
         return pacienteDAO.updatePaciente(paciente);
     }
 
+    /**
+     *
+     * @return
+     */
     public PacienteDAO getPacienteDAO() {
         return pacienteDAO;
     }
 
+    /**
+     *
+     * @param pacienteDAO
+     */
     public void setPacienteDAO(PacienteDAO pacienteDAO) {
         this.pacienteDAO = pacienteDAO;
     }

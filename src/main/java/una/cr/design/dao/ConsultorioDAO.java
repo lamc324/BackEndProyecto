@@ -1,7 +1,21 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright (C) 2016 Grupo Tango
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Universidad Nacional de Costa Rica, Estudiantes: Luis Alonso Morgan Campos,
+ * John Herrera Jimenez, Kevin Venegas Loria, Caleb Villalta Quesada, Josue David Matamorros.
  */
 package una.cr.design.dao;
 
@@ -12,12 +26,17 @@ import una.cr.design.model.Consultorio;
 
 /**
  *
- * @author John
+ * @author Grupo Tango
  */
 public class ConsultorioDAO {
 
     private final Session session = HibernateUtil.getSessionFactory().openSession();
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public Consultorio findById(int id) {
         Consultorio consultorio = null;
         org.hibernate.Query query = session.createQuery("from Consultorio where id_consultorio = :id_consultorio ");
@@ -30,6 +49,11 @@ public class ConsultorioDAO {
         return consultorio;
     }
 
+    /**
+     *
+     * @param consultorio
+     * @return
+     */
     public Consultorio saveConsultorio(Consultorio consultorio) {
         session.beginTransaction();
         session.save(consultorio);
@@ -38,6 +62,10 @@ public class ConsultorioDAO {
         return consultorio;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Consultorio> findAll() {
         List<Consultorio> consultorioList = new ArrayList<>();
 
@@ -46,6 +74,11 @@ public class ConsultorioDAO {
         return consultorioList;
     }
 
+    /**
+     *
+     * @param id
+     * @return
+     */
     public boolean deleteConsultorio(int id) {
         boolean isDeleted = false;
         Consultorio consultorio = null;
@@ -59,6 +92,11 @@ public class ConsultorioDAO {
         return isDeleted;
     }
 
+    /**
+     *
+     * @param consultorio
+     * @return
+     */
     public Consultorio updateConsultorio(Consultorio consultorio) {
         session.beginTransaction();
         session.update(consultorio);

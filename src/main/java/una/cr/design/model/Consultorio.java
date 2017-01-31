@@ -13,7 +13,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
+ * 
  * Universidad Nacional de Costa Rica, Estudiantes: Luis Alonso Morgan Campos,
  * John Herrera Jimenez, Kevin Venegas Loria, Caleb Villalta Quesada, Josue David Matamorros.
  */
@@ -61,6 +61,14 @@ public class Consultorio implements Serializable {
     public Consultorio() {
     }
 
+    /**
+     *
+     * @param idConsultorio
+     * @param nombre
+     * @param dias
+     * @param horario
+     * @param telefono
+     */
     public Consultorio(int idConsultorio, String nombre, String dias, String horario, String telefono) {
         this.idConsultorio = idConsultorio;
         this.nombre = nombre;
@@ -69,6 +77,13 @@ public class Consultorio implements Serializable {
         this.telefono = telefono;
     }
 
+    /**
+     *
+     * @param nombre
+     * @param dias
+     * @param horario
+     * @param telefono
+     */
     public Consultorio(String nombre, String dias, String horario, String telefono) {
         this.nombre = nombre;
         this.dias = dias;
